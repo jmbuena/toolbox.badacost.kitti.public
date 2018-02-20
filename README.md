@@ -1,7 +1,7 @@
 # Multi-view car detection trained on KITTI dataset.
 
 This repo has the auxiliary Matlab and C++ code in order to replicate the experiments we made for car detection in our paper.
-If you use this code for your own researh, you must reference our journal paper:
+If you use this code for your own research, you must reference our journal paper:
   
    **BAdaCost: Multi-class Boosting with Costs.**
    Antonio Fernández-Baldera, José M. Buenaposada, and Luis Baumela.
