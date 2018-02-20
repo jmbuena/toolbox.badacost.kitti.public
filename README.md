@@ -11,7 +11,7 @@ If you use this code for your own researh, you must reference our journal paper:
 ## Requirements
 
 * Clone BAdaCost detection Matlab toolbox repository: badacost.toolbox.public. 
-* Clone toolbox.badacost.kitti, a set of tools and code to perform the car detection experiments with the KITTI database.
+* Clone [toolbox.badacost.kitti.public](https://github.com/jmbuena/toolbox.badacost.kitti.public) repo, with our modified version of Piotr Dollar toolbox with the BAdaCost algorithm with cost-sensitive trees.
 * From the [object detection part](http://www.cvlibs.net/datasets/kitti/eval_object.php) of the KITTI database download:
   * The [training images](http://www.cvlibs.net/download.php?file=data_object_image_2.zip). 
   * The [training image labels](http://www.cvlibs.net/download.php?file=data_object_label_2.zip). 
