@@ -10,8 +10,7 @@ If you use this code for your own research, you must reference our journal paper
 
 ## Requirements
 
-* Clone BAdaCost detection Matlab toolbox repository: badacost.toolbox.public. 
-* Clone [toolbox.badacost.public](https://github.com/jmbuena/toolbox.badacost.public) repo, with our modified version of Piotr Dollar toolbox with the BAdaCost algorithm with cost-sensitive trees.
+* Clone [toolbox.badacost.public](https://github.com/jmbuena/toolbox.badacost.public) repo, with our modified version of Piotr Dollar toolbox with the BAdaCost algorithm with cost-sensitive trees. Go to its directory and execute Matlab. Then  from Matlab prompt, execute addpath(createpath(PATH_TO_TOOLBOX)) and then toolboxCompile.
 * From the [object detection part](http://www.cvlibs.net/datasets/kitti/eval_object.php) of the KITTI database download:
   * The [training images](http://www.cvlibs.net/download.php?file=data_object_image_2.zip). 
   * The [training image labels](http://www.cvlibs.net/download.php?file=data_object_label_2.zip). 
