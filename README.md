@@ -1,17 +1,19 @@
 # Multi-view car detection trained on KITTI dataset.
 
 This repo has the auxiliary Matlab and C++ code in order to replicate the car detection experiments in our paper.
-If you use this code for your own research, you must reference our journal paper:
+**If you use this code for your own research, you must reference our journal paper**:
   
-   **BAdaCost: Multi-class Boosting with Costs.**
+   * **BAdaCost: Multi-class Boosting with Costs.**
    Antonio Fernández-Baldera, José M. Buenaposada, and Luis Baumela.
    Pattern Recognition, Elsevier. In press, 2018.
    [DOI:10.1016/j.patcog.2018.02.022](https://doi.org/10.1016/j.patcog.2018.02.022)
+   
+   
+   [![Youtube Video](https://img.youtube.com/vi/uT8yPt2a5EE/0.jpg)](https://youtu.be/uT8yPt2a5EE)
 
 ## Requirements
 
-* Clone BAdaCost detection Matlab toolbox repository: badacost.toolbox.public. 
-* Clone [toolbox.badacost.public](https://github.com/jmbuena/toolbox.badacost.public) repo, with our modified version of Piotr Dollar toolbox with the BAdaCost algorithm with cost-sensitive trees.
+* Clone [toolbox.badacost.public](https://github.com/jmbuena/toolbox.badacost.public) repo, with our modified version of Piotr Dollar toolbox with the BAdaCost algorithm with cost-sensitive trees. Go to its directory and execute Matlab. Then  from Matlab prompt, execute addpath(createpath(PATH_TO_TOOLBOX)) and then toolboxCompile.
 * From the [object detection part](http://www.cvlibs.net/datasets/kitti/eval_object.php) of the KITTI database download:
   * The [training images](http://www.cvlibs.net/download.php?file=data_object_image_2.zip). 
   * The [training image labels](http://www.cvlibs.net/download.php?file=data_object_label_2.zip). 
