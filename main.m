@@ -49,11 +49,11 @@ end
 % -----------------------------------------------------------------------------
 dataDir = PREPARED_DATA_PATH; 
 
+useSAMME = 1; % <---- change this to use SAMME or BAdaCost
 D = 8;
 T = 1024;
 N = 7500;
 NA = 30000;
-useSAMME = 0;
 costsAlpha = 1;
 costsBeta = 3;
 costsGamma = 3;
@@ -73,18 +73,23 @@ end
 % -----------------------------------------------------------------------------
 % 4) Now we use the trained car detector in the images given in a directory:
 
-% TRAINED_DETECTOR_FILE = fullfile(OUTPUT_DATA_PATH, ...
-%                                  'KITTI_SHRINKAGE_0.050000_RESAMPLING_1.000000_ASPECT_RATIO_1.750000_Detector.mat');
-
 % The already trained detector file:
-TRAINED_DETECTOR_FILE = fullfile(OUTPUT_DATA_PATH, ...
+if useSAMME
+  TRAINED_DETECTOR_FILE = fullfile(OUTPUT_DATA_PATH, ...
+                                 sprintf('SAMME_D_%d_T_%d_N_%d_NA_%d', D, T, N, NA), ...
+                                 'KITTI_SHRINKAGE_0.100000_RESAMPLING_1.000000_ASPECT_RATIO_1.750000_Detector.mat');
+else
+  TRAINED_DETECTOR_FILE = fullfile(OUTPUT_DATA_PATH, ...
                                  sprintf('BADACOST_%d_%d_%d_D_%d_T_%d_N_%d_NA_%d_S_%4.4f_F_%4.4f', costsAlpha, costsBeta, costsGamma, D, T, N, NA, SHRINKAGE, FRAC_FEATURES), ...
                                  'KITTI_SHRINKAGE_0.050000_RESAMPLING_1.000000_ASPECT_RATIO_1.750000_Detector.mat');
+end                             
 
-% % The already trained detector file:
-% TRAINED_DETECTOR_FILE = fullfile(OUTPUT_DATA_PATH, ...
-%                                  'SUBCAT_D_4', ...
-%                                  'SUBCAT_D_4_Detector.mat');
+% The already trained detector file for SubCat (K binary detectors):
+TRAINED_DETECTOR_FILE = fullfile(OUTPUT_DATA_PATH, ...
+                                 'SUBCAT_D_2', ...
+                                 'SUBCAT_D_2_Detector.mat');
+
+
 
 det = load(TRAINED_DETECTOR_FILE);
 badacost_detector = det.detector;

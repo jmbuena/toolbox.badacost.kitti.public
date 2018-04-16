@@ -22,7 +22,7 @@ if (fast_detection)
 else 
   if iscell(badacost_detector)
     for i=1:length(badacost_detector)
-      badacost_detector.opts.cascThr = badacost_detector.opts.cascThr * 0.1;
+      badacost_detector{i}.opts.cascThr = badacost_detector{i}.opts.cascThr * 0.1;
       badacost_detector{i}.opts.pPyramid.nApprox = 9;
       badacost_detector{i}.opts.pPyramid.nPerOct = 10;
       badacost_detector{i}.opts.pPyramid.nOctUp = 1; % Loose too small detections.
@@ -44,8 +44,7 @@ h = figure;
 while (true)
   file_name = sprintf(['%010d.' imgs_ext], i);
   file_path = fullfile(imgs_path, file_name);
-  disp(file_path)
-  try
+%  try
     I = imread(file_path);
     
     % Display badacost results.
@@ -77,9 +76,9 @@ while (true)
     if (imgs_path)
       saveas(gca, fullfile(save_path,  file_name), imgs_ext);  
     end
-   catch 
-     warning('File does not exists');
-     break;
-  end
+%   catch 
+%     warning('File does not exists');
+%     break;
+%  end
   i = i + 1;
 end
